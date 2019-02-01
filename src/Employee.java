@@ -26,6 +26,6 @@ public class Employee {
 
     @Override
     public String toString() {
-        return " - "+ id +" - "+ nick +"";
+        return "["+id+"] - " + nick +"";
     }
 }

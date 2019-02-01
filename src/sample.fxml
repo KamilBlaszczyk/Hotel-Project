@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#menuFileCloseClicked" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <HBox maxWidth="-Infinity" prefHeight="31.0" prefWidth="592.0" spacing="10.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#buttonEditLabel" prefHeight="31.0" prefWidth="170.0" text="Click me" />
+                   <TextField fx:id="input" prefHeight="31.0" prefWidth="129.0">
+             </TextField>
+                  <Region prefHeight="31.0" prefWidth="85.0" />
+                  <Button mnemonicParsing="false" onAction="#loginButtonClicked" text="Login In" />
+                  <Button layoutX="384.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonTest" text="TEST" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <bottom>
+      <HBox prefHeight="11.0" prefWidth="596.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="lblinput" prefHeight="21.0" prefWidth="238.0" text="Something" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+   <left>
+      <TabPane maxWidth="-Infinity" prefHeight="296.0" prefWidth="262.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+            <Tab fx:id="Guest" text="Guest">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="257.0" prefWidth="314.0">
+                     <children>
+                        <TextField fx:id="tfname" layoutX="51.0" layoutY="29.0" promptText="name" />
+                        <TextField fx:id="tfsurname" layoutX="51.0" layoutY="68.0" promptText="surname" />
+                        <TextField fx:id="tfpesel" layoutX="51.0" layoutY="107.0" promptText="pesel" />
+                        <Button layoutX="96.0" layoutY="151.0" mnemonicParsing="false" onAction="#buttonAddGuest" text="New Guest" />
+                        <Button layoutX="79.0" layoutY="207.0" mnemonicParsing="false" onAction="#buttonShowGuest" text="Show all guests" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+          <Tab text="Rooms">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+          <Tab text="Employee">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="257.0" prefWidth="238.0">
+                     <children>
+                        <Button layoutX="63.0" layoutY="188.0" mnemonicParsing="false" onAction="#buttonShowEmployee" prefHeight="31.0" prefWidth="157.0" text="Show all Employees" />
+                        <Button layoutX="79.0" layoutY="135.0" mnemonicParsing="false" onAction="#buttonAddEmployee" prefHeight="31.0" prefWidth="127.0" text="Add Employee" />
+                        <TextField fx:id="tfnameOfEmployee" layoutX="58.0" layoutY="40.0" prefHeight="31.0" prefWidth="167.0" promptText="Name" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </left>
+   <center>
+      <TabPane prefHeight="296.0" prefWidth="423.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Guests List">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="257.0" prefWidth="218.0">
+                     <children>
+                        <ListView fx:id="listview" prefHeight="286.0" prefWidth="295.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Employees List">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="listview2" prefHeight="286.0" prefWidth="295.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Rooms List">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="257.0" prefWidth="218.0">
+                     <children>
+                        <ListView fx:id="listview3" prefHeight="286.0" prefWidth="295.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <right>
+      <TableView fx:id="table" prefHeight="274.0" prefWidth="173.0" BorderPane.alignment="CENTER">
+         <columns>
+            <TableColumn fx:id="nameColumn" prefWidth="75.0" text="name" />
+         </columns>
+      </TableView>
+   </right>
+</BorderPane>
