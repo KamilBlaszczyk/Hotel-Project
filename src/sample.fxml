@@ -5,7 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<BorderPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller" stylesheets="css/Default.css">
    <top>
       <VBox BorderPane.alignment="CENTER">
          <children>
@@ -31,11 +31,11 @@
             <HBox maxWidth="-Infinity" prefHeight="31.0" prefWidth="592.0" spacing="10.0">
                <children>
                   <Button mnemonicParsing="false" onAction="#buttonEditLabel" prefHeight="31.0" prefWidth="170.0" text="Click me" />
-                   <TextField fx:id="input" prefHeight="31.0" prefWidth="129.0">
+                   <TextField fx:id="input" prefHeight="31.0" prefWidth="129.0" promptText="Hotel Name">
              </TextField>
                   <Region prefHeight="31.0" prefWidth="85.0" />
-                  <Button mnemonicParsing="false" onAction="#loginButtonClicked" text="Login In" />
-                  <Button layoutX="384.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonTest" text="TEST" />
+                  <Button mnemonicParsing="false" text="Login In" />
+                  <Button layoutX="384.0" layoutY="10.0" mnemonicParsing="false" text="TEST" />
                </children>
                <VBox.margin>
                   <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
@@ -71,7 +71,15 @@
             </Tab>
           <Tab text="Rooms">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="tfnumberOfRoom" alignment="TOP_CENTER" layoutX="41.0" layoutY="23.0" prefHeight="31.0" prefWidth="176.0" promptText="Number of Room" />
+                        <TextField fx:id="tfnumberOfPersons" alignment="TOP_CENTER" layoutX="42.0" layoutY="62.0" prefHeight="31.0" prefWidth="176.0" promptText="Number of persons" />
+                        <TextField fx:id="tfprice" alignment="TOP_CENTER" layoutX="42.0" layoutY="102.0" prefHeight="31.0" prefWidth="175.0" promptText="price ($)" />
+                        <TextField fx:id="tfdescription" alignment="TOP_CENTER" layoutX="41.0" layoutY="141.0" prefHeight="31.0" prefWidth="175.0" promptText="Description" />
+                        <Button layoutX="83.0" layoutY="217.0" mnemonicParsing="false" onAction="#buttonShowApartment" text="Show List" />
+                        <Button layoutX="78.0" layoutY="178.0" mnemonicParsing="false" onAction="#buttonAddApartment" prefHeight="31.0" prefWidth="94.0" text="Add new" />
+                     </children></AnchorPane>
             </content>
           </Tab>
           <Tab text="Employee">
