@@ -5,7 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller" stylesheets="css/Default.css">
+<BorderPane prefHeight="400.0" prefWidth="800.0" stylesheets="css/Default.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <top>
       <VBox BorderPane.alignment="CENTER">
          <children>
@@ -30,12 +30,12 @@
             </MenuBar>
             <HBox maxWidth="-Infinity" prefHeight="31.0" prefWidth="592.0" spacing="10.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#buttonEditLabel" prefHeight="31.0" prefWidth="170.0" text="Click me" />
+                  <Button mnemonicParsing="false" onAction="#buttonEditLabel" prefHeight="31.0" prefWidth="170.0" styleClass="button-blue-gradient" text="Click me" />
                    <TextField fx:id="input" prefHeight="31.0" prefWidth="129.0" promptText="Hotel Name">
              </TextField>
                   <Region prefHeight="31.0" prefWidth="85.0" />
-                  <Button mnemonicParsing="false" text="Login In" />
-                  <Button layoutX="384.0" layoutY="10.0" mnemonicParsing="false" text="TEST" />
+                  <Button layoutX="384.0" layoutY="10.0" mnemonicParsing="false" styleClass="button-blue-gradient" text="TEST" />
+                  <Button mnemonicParsing="false" onAction="#buttonCloseProgram" styleClass="button-blue-gradient" text="Exit" />
                </children>
                <VBox.margin>
                   <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
@@ -55,17 +55,17 @@
       </HBox>
    </bottom>
    <left>
-      <TabPane maxWidth="-Infinity" prefHeight="296.0" prefWidth="262.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+      <TabPane tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
             <Tab fx:id="Guest" text="Guest">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="257.0" prefWidth="314.0">
                      <children>
-                        <TextField fx:id="tfname" layoutX="51.0" layoutY="29.0" promptText="name" />
-                        <TextField fx:id="tfsurname" layoutX="51.0" layoutY="68.0" promptText="surname" />
-                        <TextField fx:id="tfpesel" layoutX="51.0" layoutY="107.0" promptText="pesel" />
-                        <Button layoutX="96.0" layoutY="151.0" mnemonicParsing="false" onAction="#buttonAddGuest" text="New Guest" />
-                        <Button layoutX="79.0" layoutY="207.0" mnemonicParsing="false" onAction="#buttonShowGuest" text="Show all guests" />
+                        <TextField fx:id="tfname" layoutX="42.0" layoutY="30.0" prefHeight="31.0" prefWidth="163.0" promptText="name" />
+                        <TextField fx:id="tfsurname" layoutX="43.0" layoutY="68.0" prefHeight="31.0" prefWidth="161.0" promptText="surname" />
+                        <TextField fx:id="tfpesel" layoutX="42.0" layoutY="109.0" prefHeight="31.0" prefWidth="163.0" promptText="pesel" />
+                        <Button layoutX="72.0" layoutY="151.0" mnemonicParsing="false" onAction="#buttonAddGuest" styleClass="button-blue" text="Add Guest" />
+                        <Button layoutX="50.0" layoutY="202.0" mnemonicParsing="false" onAction="#buttonShowGuest" styleClass="button-blue" text="Show all guests" />
                      </children></AnchorPane>
               </content>
             </Tab>
@@ -77,8 +77,8 @@
                         <TextField fx:id="tfnumberOfPersons" alignment="TOP_CENTER" layoutX="42.0" layoutY="62.0" prefHeight="31.0" prefWidth="176.0" promptText="Number of persons" />
                         <TextField fx:id="tfprice" alignment="TOP_CENTER" layoutX="42.0" layoutY="102.0" prefHeight="31.0" prefWidth="175.0" promptText="price ($)" />
                         <TextField fx:id="tfdescription" alignment="TOP_CENTER" layoutX="41.0" layoutY="141.0" prefHeight="31.0" prefWidth="175.0" promptText="Description" />
-                        <Button layoutX="83.0" layoutY="217.0" mnemonicParsing="false" onAction="#buttonShowApartment" text="Show List" />
-                        <Button layoutX="78.0" layoutY="178.0" mnemonicParsing="false" onAction="#buttonAddApartment" prefHeight="31.0" prefWidth="94.0" text="Add new" />
+                        <Button layoutX="83.0" layoutY="217.0" mnemonicParsing="false" onAction="#buttonShowApartment" styleClass="button-blue" text="Show List" />
+                        <Button layoutX="78.0" layoutY="178.0" mnemonicParsing="false" onAction="#buttonAddApartment" prefHeight="31.0" prefWidth="94.0" styleClass="button-blue" text="Add new" />
                      </children></AnchorPane>
             </content>
           </Tab>
@@ -86,9 +86,9 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="257.0" prefWidth="238.0">
                      <children>
-                        <Button layoutX="63.0" layoutY="188.0" mnemonicParsing="false" onAction="#buttonShowEmployee" prefHeight="31.0" prefWidth="157.0" text="Show all Employees" />
-                        <Button layoutX="79.0" layoutY="135.0" mnemonicParsing="false" onAction="#buttonAddEmployee" prefHeight="31.0" prefWidth="127.0" text="Add Employee" />
-                        <TextField fx:id="tfnameOfEmployee" layoutX="58.0" layoutY="40.0" prefHeight="31.0" prefWidth="167.0" promptText="Name" />
+                        <Button layoutX="38.0" layoutY="191.0" mnemonicParsing="false" onAction="#buttonShowEmployee" prefHeight="31.0" prefWidth="172.0" styleClass="button-blue" text="Show all Employees" />
+                        <Button layoutX="63.0" layoutY="137.0" mnemonicParsing="false" onAction="#buttonAddEmployee" prefHeight="31.0" prefWidth="127.0" styleClass="button-blue" text="Add Employee" />
+                        <TextField fx:id="tfnameOfEmployee" layoutX="58.0" layoutY="47.0" prefHeight="20.0" prefWidth="140.0" promptText="Name" />
                      </children>
                   </AnchorPane>
             </content>
@@ -97,7 +97,7 @@
       </TabPane>
    </left>
    <center>
-      <TabPane prefHeight="296.0" prefWidth="423.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+      <TabPane prefHeight="296.0" prefWidth="344.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
           <Tab text="Guests List">
             <content>
