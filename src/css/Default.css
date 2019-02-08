@@ -1,6 +1,6 @@
 .root{
     -fx-background-color: #DDE9ED;
-    -fx-font-size: 12pt;
+    -fx-font-size: 11pt;
 }
 .label{
     /*-fx-text-fill: #e8e8e8;*/
@@ -21,5 +21,5 @@
     -fx-background-radius: 4;
 }
 #bold-label{
-    -fx-font-weight: bold;
+    /*-fx-font-weight: bold;*/
 }
