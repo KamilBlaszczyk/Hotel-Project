@@ -3,10 +3,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import model.Apartment;
+import model.Employee;
+import model.Guest;
+import additives.ConfirmBox;
 
 import java.net.URL;
 import java.text.Normalizer;
-import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
@@ -45,7 +48,11 @@ public class Controller implements Initializable {
         Platform.exit();
     }
 
-
+    public void buttonCloseProgram(){
+        Boolean answer = ConfirmBox.display("Tytuł","Czy na pewno chcesz wyjść?");
+        if(answer)
+            Platform.exit();
+    }
 
     public void buttonShowEmployee() {
         ObservableList<Employee> employees = FXCollections.observableArrayList(h.selectEmployee());
@@ -101,6 +108,7 @@ public class Controller implements Initializable {
 
     public void buttonEditLabel(javafx.event.ActionEvent actionEvent) {
         lblinput.setText(input.getText());
+        System.out.println("label has been edited");
     }
 
 
@@ -108,15 +116,13 @@ public class Controller implements Initializable {
 
 
 
-
-
 //    public void buttonShowGuest() {
-//        ObservableList<Guest> guests = FXCollections.observableArrayList(h.selectGuest());
+//        ObservableList<model.Guest> guests = FXCollections.observableArrayList(h.selectGuest());
 //        listview.setItems(guests);
 //        System.out.println("Guests were showed");
 //        //Wyświetlanie w konsoli
 //        System.out.println("Lista gości: ");
-//        for(Guest x:guests)
+//        for(model.Guest x:guests)
 //            System.out.println(x);
 //    }
 
@@ -126,22 +132,20 @@ public class Controller implements Initializable {
 //        editLabel = editLabel.replaceAll("[^\\p{ASCII}]", "");
 //        System.out.println("Wpisałeś: " + editLabel);
 //    }
+//
 
 
-//
-//
-//
 //
 //    Nieudana proba wyswietlenia zawartosci listy w tablicy
 //
-//    public TableView<Product> table;
+//    public TableView<model.Product> table;
 //    public TextField nameInput,priceInput, quantityInput;
 //
-//    public TableColumn<Product, String> nameColumn;
-//    public TableColumn<Product, Double> priceColumn;
-//    public TableColumn<Product, String> quantityColumn;
-//    public TableView<Guest> table;
-//    public TableColumn<Product, String> nameColumn;
+//    public TableColumn<model.Product, String> nameColumn;
+//    public TableColumn<model.Product, Double> priceColumn;
+//    public TableColumn<model.Product, String> quantityColumn;
+//    public TableView<model.Guest> table;
+//    public TableColumn<model.Product, String> nameColumn;
 //
 //    public void tableShowGuest(javafx.event.ActionEvent actionEvent) {
 //        table = new TableView<>();
@@ -157,7 +161,7 @@ public class Controller implements Initializable {
 //    }
 //
 //    public void addButtonClicked() {
-//        Product product = new Product();
+//        model.Product product = new model.Product();
 //        product.setName(nameInput.getText());
 //        product.setPrice(Double.parseDouble(priceInput.getText()));
 //        product.setQuantity(Integer.parseInt(quantityInput.getText()));
@@ -167,13 +171,13 @@ public class Controller implements Initializable {
 //        quantityInput.clear();
 //    }
 //
-//    public ObservableList<Product> getProduct(){
-//        ObservableList<Product> products = FXCollections.observableArrayList();
-//        products.add(new Product("Playstation 4", 999.99, 5));
-//        products.add(new Product("Iphone X", 1345.75, 99));
-//        products.add(new Product("Ham 1kg", 35.25, 516));
-//        products.add(new Product("Laptop", 735.35, 28));
-//        products.add(new Product("Corn", 1.49, 856));
+//    public ObservableList<model.Product> getProduct(){
+//        ObservableList<model.Product> products = FXCollections.observableArrayList();
+//        products.add(new model.Product("Playstation 4", 999.99, 5));
+//        products.add(new model.Product("Iphone X", 1345.75, 99));
+//        products.add(new model.Product("Ham 1kg", 35.25, 516));
+//        products.add(new model.Product("Laptop", 735.35, 28));
+//        products.add(new model.Product("Corn", 1.49, 856));
 //        return products;
 //    }
 
