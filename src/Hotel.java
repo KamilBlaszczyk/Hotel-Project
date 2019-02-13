@@ -1,3 +1,7 @@
+import model.Apartment;
+import model.Employee;
+import model.Guest;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
