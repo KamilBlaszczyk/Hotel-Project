@@ -31,10 +31,18 @@ public class Controller implements Initializable {
 
     public TextField tfnameOfEmployee;
 
-    //publiczne listy do wyświetlania danych
+    //publiczne listy i tabele do wyświetlania danych
     public ListView<Guest> listview;
     public ListView<Employee> listview2;
-    public ListView<Apartment> listview3;
+//    public ListView<Apartment> listview3;
+
+    public TableView<Apartment> tableView1;
+
+    public TableColumn idColumn;
+    public TableColumn numberOfRoomColumn;
+    public TableColumn personColumn;
+    public TableColumn priceColumn;
+    public TableColumn descriptionColumn;
 
 
     Scanner load =  new Scanner(System.in);
@@ -67,9 +75,13 @@ public class Controller implements Initializable {
     }
 
     public void buttonShowApartment() {
+//        ObservableList<Apartment> apartments = FXCollections.observableArrayList(h.selectApartment());
+//        listview3.setItems(apartments);
+//        System.out.println("Apartments were showed");
+
         ObservableList<Apartment> apartments = FXCollections.observableArrayList(h.selectApartment());
-        listview3.setItems(apartments);
-        System.out.println("Apartments were showed");
+        tableView1.setItems(apartments);
+        tableView1.getColumns().addAll(idColumn, numberOfRoomColumn, personColumn, priceColumn, descriptionColumn);
     }
 
     public void buttonAddApartment(javafx.event.ActionEvent actionEvent) {
