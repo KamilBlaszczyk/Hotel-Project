@@ -52,7 +52,7 @@ public class Apartment {
 
     @Override
     public String toString() {
-        return " - "+ id +" - "+ numberOfRoom +" - "+ numberOfPersons +" - "+ price +" - "+ description +"";
+        return "["+ id +"] - "+ numberOfRoom +" - "+ numberOfPersons +" - "+ price +" - "+ description +"";
     }
 
 }
