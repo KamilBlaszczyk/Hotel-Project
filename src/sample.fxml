@@ -55,7 +55,7 @@
       </HBox>
    </bottom>
    <left>
-      <TabPane tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+      <TabPane prefHeight="296.0" prefWidth="264.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
             <Tab fx:id="Guest" text="Guest">
               <content>
@@ -69,6 +69,17 @@
                      </children></AnchorPane>
               </content>
             </Tab>
+          <Tab text="Employee">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="257.0" prefWidth="204.0">
+                     <children>
+                        <Button layoutX="38.0" layoutY="191.0" mnemonicParsing="false" onAction="#buttonShowEmployee" prefHeight="31.0" prefWidth="172.0" styleClass="button-blue" text="Show all Employees" />
+                        <Button layoutX="63.0" layoutY="137.0" mnemonicParsing="false" onAction="#buttonAddEmployee" prefHeight="31.0" prefWidth="127.0" styleClass="button-blue" text="Add Employee" />
+                        <TextField fx:id="tfnameOfEmployee" layoutX="58.0" layoutY="47.0" prefHeight="20.0" prefWidth="140.0" promptText="Name" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
           <Tab text="Rooms">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
@@ -82,17 +93,6 @@
                      </children></AnchorPane>
             </content>
           </Tab>
-          <Tab text="Employee">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="257.0" prefWidth="238.0">
-                     <children>
-                        <Button layoutX="38.0" layoutY="191.0" mnemonicParsing="false" onAction="#buttonShowEmployee" prefHeight="31.0" prefWidth="172.0" styleClass="button-blue" text="Show all Employees" />
-                        <Button layoutX="63.0" layoutY="137.0" mnemonicParsing="false" onAction="#buttonAddEmployee" prefHeight="31.0" prefWidth="127.0" styleClass="button-blue" text="Add Employee" />
-                        <TextField fx:id="tfnameOfEmployee" layoutX="58.0" layoutY="47.0" prefHeight="20.0" prefWidth="140.0" promptText="Name" />
-                     </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
         </tabs>
       </TabPane>
    </left>
@@ -101,9 +101,9 @@
         <tabs>
           <Tab text="Guests List">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="257.0" prefWidth="218.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="257.0" prefWidth="300.0">
                      <children>
-                        <ListView fx:id="listview" prefHeight="286.0" prefWidth="295.0" />
+                        <ListView fx:id="listview" prefHeight="286.0" prefWidth="296.0" />
                      </children>
                   </AnchorPane>
             </content>
@@ -121,7 +121,15 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="257.0" prefWidth="218.0">
                      <children>
-                        <ListView fx:id="listview3" prefHeight="286.0" prefWidth="295.0" />
+                        <TableView fx:id="tableView1" prefHeight="258.0" prefWidth="494.0">
+                          <columns>
+                            <TableColumn fx:id="idColumn" prefWidth="75.0" text="id" />
+                            <TableColumn fx:id="numberOfRoomColumn" prefWidth="108.33331298828125" text="umber room" />
+                              <TableColumn fx:id="personsColumn" prefWidth="75.0" text="persons" />
+                              <TableColumn fx:id="priceColumn" prefWidth="75.0" text="price" />
+                              <TableColumn fx:id="descriptionColumn" prefWidth="133.66668701171875" text="description" />
+                          </columns>
+                        </TableView>
                      </children>
                   </AnchorPane>
                </content>
@@ -129,11 +137,4 @@
         </tabs>
       </TabPane>
    </center>
-   <right>
-      <TableView fx:id="table" prefHeight="274.0" prefWidth="173.0" BorderPane.alignment="CENTER">
-         <columns>
-            <TableColumn fx:id="nameColumn" prefWidth="75.0" text="name" />
-         </columns>
-      </TableView>
-   </right>
 </BorderPane>
