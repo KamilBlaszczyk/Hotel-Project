@@ -124,8 +124,8 @@
                         <TableView fx:id="tableView1" prefHeight="258.0" prefWidth="494.0">
                           <columns>
                             <TableColumn fx:id="idColumn" prefWidth="75.0" text="id" />
-                            <TableColumn fx:id="numberOfRoomColumn" prefWidth="108.33331298828125" text="umber room" />
-                              <TableColumn fx:id="personsColumn" prefWidth="75.0" text="persons" />
+                            <TableColumn fx:id="numberOfRoomColumn" prefWidth="108.33331298828125" text="room" />
+                              <TableColumn fx:id="personColumn" prefWidth="75.0" text="persons" />
                               <TableColumn fx:id="priceColumn" prefWidth="75.0" text="price" />
                               <TableColumn fx:id="descriptionColumn" prefWidth="133.66668701171875" text="description" />
                           </columns>
