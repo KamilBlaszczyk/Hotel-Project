@@ -3,6 +3,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import model.Apartment;
 import model.Employee;
 import model.Guest;
@@ -38,11 +39,11 @@ public class Controller implements Initializable {
 
     public TableView<Apartment> tableView1;
 
-    public TableColumn idColumn;
-    public TableColumn numberOfRoomColumn;
-    public TableColumn personColumn;
-    public TableColumn priceColumn;
-    public TableColumn descriptionColumn;
+    public TableColumn<Apartment, Integer> idColumn;
+    public TableColumn<Apartment, Integer> numberOfRoomColumn;
+    public TableColumn<Apartment, Integer> personColumn;
+    public TableColumn<Apartment, Integer> priceColumn;
+    public TableColumn<Apartment, String> descriptionColumn;
 
 
     Scanner load =  new Scanner(System.in);
@@ -75,27 +76,45 @@ public class Controller implements Initializable {
     }
 
     public void buttonShowApartment() {
+        idColumn.setCellValueFactory(new PropertyValueFactory<Apartment, Integer>("id"));
+        numberOfRoomColumn.setCellValueFactory(new PropertyValueFactory<Apartment, Integer>("numberOfRoom"));
+        personColumn.setCellValueFactory(new PropertyValueFactory<Apartment, Integer>("numberOfPersons"));
+        priceColumn.setCellValueFactory(new PropertyValueFactory<Apartment, Integer>("price"));
+        descriptionColumn.setCellValueFactory(new PropertyValueFactory<Apartment, String>("description"));
+
+        ObservableList<Apartment> apartments = FXCollections.observableArrayList(h.selectApartment());
+        tableView1.getItems().setAll(apartments);
 //        ObservableList<Apartment> apartments = FXCollections.observableArrayList(h.selectApartment());
 //        listview3.setItems(apartments);
 //        System.out.println("Apartments were showed");
-
-        ObservableList<Apartment> apartments = FXCollections.observableArrayList(h.selectApartment());
-        tableView1.setItems(apartments);
-        tableView1.getColumns().addAll(idColumn, numberOfRoomColumn, personColumn, priceColumn, descriptionColumn);
+//        ObservableList<Apartment> apartments = FXCollections.observableArrayList(h.selectApartment());
+//        tableView1.setItems(apartments);
+//        tableView1.getColumns().addAll(idColumn, numberOfRoomColumn, personColumn, priceColumn, descriptionColumn);
+//        tableView1.getItems().setAll(parseUserList());
+//        tableView1.setItems(apartments);
+//        tableView1.getColumns().addAll(idColumn, numberOfRoomColumn, personColumn, priceColumn, descriptionColumn);
     }
 
     public void buttonAddApartment(javafx.event.ActionEvent actionEvent) {
-        int numberOfRoom = Integer.parseInt(Normalizer.normalize(tfnumberOfRoom.getText(), Normalizer.Form.NFD));
-        int numberOfPersons = Integer.parseInt(Normalizer.normalize(tfnumberOfPersons.getText(), Normalizer.Form.NFD));
-        int price = Integer.parseInt(Normalizer.normalize(tfprice.getText(), Normalizer.Form.NFD));
-        String description = Normalizer.normalize(tfdescription.getText(), Normalizer.Form.NFD);
-        h.insertApartment(numberOfRoom, numberOfPersons, price, description);
+        try {
+            int numberOfRoom = Integer.parseInt(Normalizer.normalize(tfnumberOfRoom.getText(), Normalizer.Form.NFD));
+            int numberOfPersons = Integer.parseInt(Normalizer.normalize(tfnumberOfPersons.getText(), Normalizer.Form.NFD));
+            int price = Integer.parseInt(Normalizer.normalize(tfprice.getText(), Normalizer.Form.NFD));
+            String description = Normalizer.normalize(tfdescription.getText(), Normalizer.Form.NFD);
+            h.insertApartment(numberOfRoom, numberOfPersons, price, description);
 
-        tfnumberOfPersons.clear();
-        tfnumberOfRoom.clear();
-        tfprice.clear();
-        tfdescription.clear();
-        System.out.println("Wpisałeś: " + numberOfRoom + numberOfPersons + price + description);
+            tfnumberOfPersons.clear();
+            tfnumberOfRoom.clear();
+            tfprice.clear();
+            tfdescription.clear();
+            System.out.println("Wpisałeś: " + numberOfRoom + numberOfPersons + price + description);
+
+            //Wywołanie publicznej metody
+            buttonShowApartment();
+        } catch (Exception e) {
+            System.out.println("Empty TextField!!!");
+        }
+
     }
 
     public void buttonAddGuest(javafx.event.ActionEvent actionEvent) {
@@ -122,6 +141,7 @@ public class Controller implements Initializable {
         lblinput.setText(input.getText());
         System.out.println("label has been edited");
     }
+
 
 
 
